@@ -1,0 +1,76 @@
+# Enable colors and change prompt:
+autoload -U colors && colors	# Load colors
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+setopt autocd		# Automatically cd into typed directory.
+stty stop undef		# Disable ctrl-s to freeze terminal.
+setopt interactive_comments
+
+# History in cache directory:
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE="${XDG_CACHE_HOME:-$HOME/.cache}/zsh/history"
+setopt inc_append_history
+
+# Basic auto/tab complete:
+autoload -U compinit
+zstyle ':completion:*' menu select
+zmodload zsh/complist
+compinit
+_comp_options+=(globdots)		# Include hidden files.
+
+bindkey -e
+
+# aliases
+alias \
+	cp="cp -iv" \
+	mv="mv -iv" \
+	rm="rm -vI" \
+	bc="bc -ql" \
+	rsync="rsync -vrPlu" \
+	mkdir="mkdir -pv" \
+  cat="bat" 
+
+# Neovim Alias
+alias \
+	vim="nvim" \
+	vi="nvim" \
+	v="nvim"
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+  l="ls -al"
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
+
+# These common commands are just too long! Abbreviate them.
+alias \
+	ka="killall" \
+	g="git" \
+	scs="systemctl suspend" \
+	sdn="shutdown -h now" \
+	e="$EDITOR" \
+	v="$EDITOR" \
+	p="pacman" \
+	y="yay" \
+  lg="lazygit" \
+	z="zathura"
+
+# Yazi shell wrapper
+function yy() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+
+# source fzf
+source <(fzf --zsh)
+source <(chezmoi completion zsh)
+
+# sourcing syntax hightlighting plugin
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
