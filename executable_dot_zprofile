@@ -13,9 +13,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CACHE_HOME="$HOME/.cache"
 export HISTFILE="$XDG_DATA_HOME/history"
 
-export GTK_THEME="Materia-dark-compact"
-export QT_QPA_PLATFORMTHEME="qt6ct"
-export XCURSOR_THEME="breeze_cursors"
+# export GTK_THEME="Materia-dark-compact"
+# export QT_QPA_PLATFORMTHEME="qt6ct"
+# export XCURSOR_THEME="breeze_cursors"
 
-[ "$(tty)" = "/dev/tty1" ] && run-hyprland
-[ "$(tty)" = "/dev/tty2" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx
+# [ "$(tty)" = "/dev/tty1" ] && run-hyprland
+# [ "$(tty)" = "/dev/tty2" ] && ! pidof -s Xorg >/dev/null 2>&1 && exec startx

@@ -83,8 +83,7 @@ alias \
 	y="yay" \
   lg="lazygit" \
 	z="zathura" \
-	cm="chezmoi" \
-  zj="zellij"
+	cm="chezmoi"
 
 # Yazi shell wrapper
 function yy() {
