@@ -1,0 +1,22 @@
+#!/bin/sh
+
+default() {
+    xrandr --output HDMI-A-0 --auto
+    xrandr --output eDP --auto
+    xrandr --output HDMI-A-0 --mode 1920x1080 -r 75 --primary --right-of eDP && notify-send 'Display configuration set to Default Setup'
+}
+
+builtinn() {
+    xrandr --output HDMI-A-0 --off --output eDP --mode 1920x1080 --primary && notify-send 'Display configuration set to Built-in Only'
+}
+
+hdmi() {
+    xrandr --output eDP --off --output HDMI-A-0 --mode 1920x1080 -r 75 --primary && notify-send 'Display configuration set to HDMI Only'
+}
+
+case "$(printf "Default Setup\nBuilt-in Only\nHDMI Only" | dmenu -fn "Berkeley Mono" -i -p 'Action: ')" in
+    "Default Setup") $(default) ;;
+    "Built-in Only") $(builtinn) ;;
+    "HDMI Only") $(hdmi) ;;
+    *) exit 1 ;;
+esac
