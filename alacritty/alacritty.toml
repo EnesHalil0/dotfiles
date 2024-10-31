@@ -3,10 +3,6 @@ dynamic_padding = true
 # opacity = 0.97
 # padding = { x = 0, y = 0 }
 
-[shell]
-program = "/bin/zsh"
-args = ["-l", "-c", "zellij"]
-
 [env]
 TERM = "xterm-256color"
 
@@ -15,10 +11,10 @@ size = 12
 # offset = { y = 2 }
 # glyph_offset = { y = 1 }
 
-normal = { family = "0xProto", style = "Medium" }
-bold = { family = "0xProto", style = "Bold" }
-italic = { family = "0xProto", style = "Medium Italic" }
-bold_italic = { family = "0xProto", style = "Bold Italic" }
+normal = { family = "Iosevka Nerd Font", style = "Medium" }
+bold = { family = "Iosevka Nerd Font", style = "Bold" }
+italic = { family = "Iosevka Nerd Font", style = "Medium Italic" }
+bold_italic = { family = "Iosevka Nerd Font", style = "Bold Italic" }
 
 # Colors (Kanagawa Wave)
 # Source https//github.com/rebelot/kanagawa.nvim

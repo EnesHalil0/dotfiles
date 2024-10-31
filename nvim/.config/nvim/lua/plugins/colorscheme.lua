@@ -9,7 +9,7 @@ return {
 				term_colors = true, -- Change terminal color as per the selected theme style
 			})
 
-			vim.cmd.colorscheme("onedark")
+			-- vim.cmd.colorscheme("onedark")
 		end,
 	},
 
@@ -18,8 +18,15 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
+	},
+
+	{
+		"rebelot/kanagawa.nvim",
+		opts = {
+			theme = "wave",
+		},
 		config = function()
-			-- vim.cmd.colorscheme("tokyonight-night")
+			vim.cmd.colorscheme("kanagawa")
 		end,
 	},
 }

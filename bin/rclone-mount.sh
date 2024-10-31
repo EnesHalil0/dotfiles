@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 MOUNT_POINT=~/gdrive
 REMOTE_NAME=gdrive
@@ -30,6 +30,6 @@ if mountpoint -q "$MOUNT_POINT"; then
     echo "Google Drive unmounted."
 else
     echo "Mounting Google Drive..."
-    rclone mount "$REMOTE_NAME":/ "$MOUNT_POINT" --vfs-cache-mode full &
+    echo 'rclone mount "$REMOTE_NAME":/ "$MOUNT_POINT" --vfs-cache-mode full &'
     echo "Google Drive mounted at $MOUNT_POINT."
 fi
