@@ -1,0 +1,11 @@
+max-visible=10
+layer=top
+background-color=#111111dd
+text-color=#d8dee9
+border-color=#434c5e
+border-radius=7
+max-icon-size=48
+default-timeout=10000
+anchor=top-right
+margin=20
+font=Roboto 10

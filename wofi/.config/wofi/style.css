@@ -1,0 +1,12 @@
+#window {
+  font-family: Iosevka Nerd Font;
+  font-size: 20px;
+   font-weight: 700; 
+}
+
+#outer-box {
+  border: solid;
+  border-width: 3px;
+  border-color: #6A9589;
+  border-radius: 7px;
+}

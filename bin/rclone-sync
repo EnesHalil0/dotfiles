@@ -1,0 +1,37 @@
+#!/bin/sh
+
+gdrive_to_local() {
+  rclone sync gdrive:Yildiz\ Technical\ University/fall24 /home/ehd/fall24
+}
+
+local_to_gdrive() {
+  rclone sync /home/ehd/fall24 gdrive:Yildiz\ Technical\ University/fall24
+}
+
+usage(){
+  echo "
+Usage:
+  rclone-sync g2l
+  rclone-sync l2g
+"
+}
+
+if [ -z $1 ]; then
+  usage
+  exit
+fi
+
+case $1 in
+  "g2l")
+    gdrive_to_local
+    ;;
+
+  "l2g")
+    local_to_gdrive
+    ;;
+
+  *)
+    usage
+    exit
+    ;;
+esac
