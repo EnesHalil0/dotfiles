@@ -18,6 +18,9 @@ return {
 		lazy = false,
 		priority = 1000,
 		opts = {},
+		config = function()
+			vim.cmd.colorscheme("tokyonight-night")
+		end,
 	},
 
 	{
@@ -25,8 +28,16 @@ return {
 		opts = {
 			theme = "wave",
 		},
+		-- config = function()
+		-- 	vim.cmd.colorscheme("kanagawa")
+		-- end,
+	},
+
+	{
+		"sainnhe/sonokai",
 		config = function()
-			vim.cmd.colorscheme("kanagawa")
+			vim.g.sonokai_transparent_background = 1
+			vim.cmd.colorscheme("sonokai")
 		end,
 	},
 }
