@@ -1,0 +1,34 @@
+#!/bin/sh
+
+# Check if exactly one argument is provided
+if [ $# -ne 1 ]; then
+  echo "Usage: set-brightness <percentage>"
+  exit 1
+fi
+
+# Validate input is a number
+if ! echo "$1" | grep -qE '^[0-9]+$'; then
+  echo "Error: Percentage must be a number between 0 and 100."
+  exit 1
+fi
+
+# Assign and validate percentage range
+percentage=$1
+
+if [ "$percentage" -lt 0 ] || [ "$percentage" -gt 100 ]; then
+  echo "Error: Percentage must be between 0 and 100."
+  exit 1
+fi
+
+# Attempt to set brightness via ddcutil and brightnessctl
+if sudo ddcutil setvcp 10 "$percentage" > /dev/null 2>&1; then
+  echo "Brightness set via ddcutil to $percentage%."
+else
+  echo "Warning: Failed to set brightness via ddcutil."
+fi
+
+if brightnessctl s "${percentage}%" > /dev/null 2>&1; then
+  echo "Brightness set via brightnessctl to $percentage%."
+else
+  echo "Warning: Failed to set brightness via brightnessctl."
+fi
