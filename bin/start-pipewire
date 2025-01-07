@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if ! pidof wireplumber > /dev/null; then
+    pipewire &
+    sleep 1
+    pipewire-pulse &
+    sleep 1
+    wireplumber &
+fi
