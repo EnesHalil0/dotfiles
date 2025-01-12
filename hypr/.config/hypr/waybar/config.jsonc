@@ -2,7 +2,7 @@
 		"layer": "top",
 		"modules-left": ["hyprland/workspaces", "hyprland/window"],
 		"modules-center": ["clock"],
-		"modules-right": ["tray", "cpu", "temperature", "memory", "idle_inhibitor", "pulseaudio", "backlight", "battery"],
+		"modules-right": ["tray", "hyprland/language", "cpu", "temperature", "memory", "idle_inhibitor", "pulseaudio", "backlight", "battery"],
 
   "hyprland/window": {
 	    "format": "{title}",

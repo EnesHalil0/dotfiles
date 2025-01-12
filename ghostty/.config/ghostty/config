@@ -1,0 +1,29 @@
+window-decoration = true
+# font-family = "Berkeley Mono"
+font-size = 14
+# theme = "tokyonight"
+background = "171717"
+
+# adjust-cell-width = 0
+# a%djust-cell-height = 20%
+
+# keybind = alt+h=goto_split:left
+# keybind = alt+l=goto_split:right
+# keybind = alt+k=goto_split:top
+# keybind = alt+j=goto_split:bottom
+
+# keybind = shift+alt+l=new_split:right
+# keybind = shift+alt+h=new_split:left
+# keybind = shift+alt+j=new_split:down
+# keybind = shift+alt+k=new_split:up
+
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
+keybind = alt+7=unbind
+keybind = alt+8=unbind
+keybind = alt+9=unbind
+keybind = alt+0=unbind

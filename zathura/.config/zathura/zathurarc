@@ -1,0 +1,9 @@
+set selection-clipboard clipboard
+set sandbox none
+set scroll-step 100
+
+unmap q
+map <C-q>
+map <C--> zoom out
+map <C-=> zoom in
+map = zoom in

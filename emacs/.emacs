@@ -5,7 +5,7 @@
 (load "~/.emacs.rc/misc-rc.el")
 
 (set-face-attribute 'default nil
-                    :family "Iosevka"
+                    :family "Berkeley Mono"
                     :height 140
                     :weight 'medium)
 
