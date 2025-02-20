@@ -130,8 +130,3 @@ This command does the inverse of `fill-paragraph'."
     (forward-char column)))
 
 (global-set-key (kbd "C-,") 'rc/duplicate-line)
-
-;;; A little hack which fixes a problem with meta key in fluxbox under VNC.
-(setq x-alt-keysym 'meta)
-
-(setq confirm-kill-emacs 'y-or-n-p)

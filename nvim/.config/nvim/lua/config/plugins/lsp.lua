@@ -18,6 +18,7 @@ return {
 			require("lspconfig").lua_ls.setup { capabilites = capabilities }
 			require("lspconfig").clangd.setup {}
 			require("lspconfig").gopls.setup {}
+			require("lspconfig").zls.setup {}
 
 			--
 			-- Keymaps

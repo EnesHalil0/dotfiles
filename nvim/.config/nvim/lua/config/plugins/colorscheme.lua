@@ -10,7 +10,7 @@ return {
 				}
 			})
 
-			vim.cmd.colorscheme "nightfox"
+			-- vim.cmd.colorscheme "nightfox"
 		end,
 	},
 
@@ -43,5 +43,56 @@ return {
 		-- config = function ()
 		-- 	vim.cmd[[colorscheme tokyonight-night]]
 		-- end
+	},
+	{
+		"navarasu/onedark.nvim",
+		config = function()
+			require('onedark').setup {
+				style = 'warmer',
+				transparent = true,
+			}
+			-- vim.cmd.colorscheme "onedark"
+		end
+	},
+	{
+		"vague2k/vague.nvim",
+		config = function()
+			-- NOTE: you do not need to call setup if you don't want to.
+			require("vague").setup({
+				-- optional configuration here
+			})
+			-- vim.cmd.colorscheme "vague"
+		end
+	},
+
+	{
+		"miikanissi/modus-themes.nvim",
+		priority = 1000,
+	},
+	{
+		"rose-pine/neovim",
+		name = "rose-pine",
+		config = function()
+			require("rose-pine").setup({
+				styles = {
+					transparency = true,
+				}
+			})
+
+			-- vim.cmd("colorscheme rose-pine")
+		end
+	},
+	{
+		"ellisonleao/gruvbox.nvim",
+		priority = 1000,
+		config = function()
+			require("gruvbox").setup({
+				contrast = "soft",
+				dim_inactive = false,
+				transparent_mode = true,
+			})
+
+			vim.cmd("colorscheme gruvbox")
+		end
 	}
 }

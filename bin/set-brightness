@@ -27,7 +27,7 @@ else
   echo "Warning: Failed to set brightness via ddcutil."
 fi
 
-if brightnessctl s "${percentage}%" > /dev/null 2>&1; then
+if sudo brightnessctl s "${percentage}%" > /dev/null 2>&1; then
   echo "Brightness set via brightnessctl to $percentage%."
 else
   echo "Warning: Failed to set brightness via brightnessctl."

@@ -44,12 +44,11 @@ return {
 				-- adding any nvim-cmp sources here will enable them
 				-- with blink.compat
 				default = { "lsp", "path", "snippets", "buffer" },
-				cmdline = {},
 			},
 
 			keymap = {
-				preset = "enter",
-				["<C-y>"] = { "select_and_accept" },
+				preset = "default",
+				-- ["<C-y>"] = { "select_and_accept" },
 			},
 		}
 	},

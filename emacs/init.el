@@ -1,11 +1,13 @@
-(setq custom-file "~/.emacs.custom.el")
+(setq custom-file "~/.config/emacs/custom.el")
 (package-initialize)
 
-(load "~/.emacs.rc/rc.el")
-(load "~/.emacs.rc/misc-rc.el")
+(add-to-list 'load-path "~/.config/emacs/local/")
+
+(load "~/.config/emacs/rc/rc.el")
+(load "~/.config/emacs/rc/misc-rc.el")
 
 (set-face-attribute 'default nil
-                    :family "Berkeley Mono"
+                    :family "Iosevka Comfy Motion Fixed"
                     :height 140
                     :weight 'medium)
 
@@ -15,10 +17,15 @@
 (column-number-mode 1)
 (show-paren-mode 1)
 (setq make-pointer-invisible t)
+(setq ring-bell-function 'ignore)
+(setq inhibit-splash-screen t)
 
-(rc/require-theme 'gruber-darker)
+(visual-line-mode 1)
+(toggle-word-wrap 1)
 
-;;; ido
+(rc/require-theme 'gruvbox)
+
+;;; Ido
 (rc/require 'smex 'ido-completing-read+)
 
 (require 'ido-completing-read+)
@@ -60,3 +67,18 @@
 
 (global-set-key (kbd "C-c m s") 'magit-status)
 (global-set-key (kbd "C-c m l") 'magit-log)
+
+(rc/require 'zig-mode)
+
+(require 'simpc-mode)
+(add-to-list 'auto-mode-alist '("\\.[hc]\\(pp\\)?\\'" . simpc-mode))
+
+;;; Company
+(rc/require 'company)
+(require 'company)
+
+;;; LSP Mode
+(rc/require 'lsp-mode)
+(setq lsp-keymap-prefix "C-\\")
+
+(add-hook 'after-init-hook 'global-company-mode)
