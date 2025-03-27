@@ -4,7 +4,7 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
 		-- calling `setup` is optional for customization
-		require('fzf-lua').setup({ 'telescope' })
+		-- require('fzf-lua').setup()
 
 		vim.keymap.set("n", "<space>sf", require('fzf-lua').files)
 		vim.keymap.set("n", "<space>sG", require('fzf-lua').grep)
@@ -15,5 +15,6 @@ return {
 		vim.keymap.set("n", "<space>sk", require('fzf-lua').keymaps)
 		vim.keymap.set("n", "<space>sh", require('fzf-lua').helptags)
 		vim.keymap.set("n", "<space>sb", require('fzf-lua').buffers)
-	end
+	end,
+	opts = {{'telescope'}},
 }

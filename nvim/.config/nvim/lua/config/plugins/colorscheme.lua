@@ -10,7 +10,7 @@ return {
 				}
 			})
 
-			-- vim.cmd.colorscheme "nightfox"
+			vim.cmd.colorscheme "nightfox"
 		end,
 	},
 
@@ -92,7 +92,7 @@ return {
 				transparent_mode = true,
 			})
 
-			vim.cmd("colorscheme gruvbox")
+			-- vim.cmd("colorscheme gruvbox")
 		end
 	}
 }

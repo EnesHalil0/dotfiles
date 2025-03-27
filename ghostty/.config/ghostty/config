@@ -1,9 +1,14 @@
-window-decoration = false
+window-decoration = none
+gtk-adwaita = false
 
-font-family = "Berkeley Mono Variable"
+font-family = Iosevka Nerd Font
+font-style = Medium
+font-style-bold = Bold
+font-style-italic = Medium Italic
+font-style-bold-italic = Bold Italic
 
-font-size = 14
-# theme = "GruvboxDarkHard"
+font-size = 12
+theme = "OneHalfDark"
 # background = "111111"
 
 keybind = alt+h=goto_split:left

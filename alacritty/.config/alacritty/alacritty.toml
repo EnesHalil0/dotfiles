@@ -7,14 +7,12 @@ dynamic_padding = true
 TERM = "xterm-256color"
 
 [font]
-size = 14
+size = 12
 
-
-normal = { family = "monospace", style = "Regular" }
-# normal = { family = "Iosevka Comfy Motion Fixed", style = "Medium" }
-# bold = { family = "Iosevka Comfy Motion Fixed", style = "Bold" }
-# italic = { family = "Iosevka Comfy Motion Fixed", style = "Medium Italic" }
-# bold_italic = { family = "Iosevka Comfy Motion Fixed", style = "Bold Italic" }
+normal = { family = "Iosevka Nerd Font", style = "Medium" }
+bold = { family = "Iosevka Nerd Font", style = "Bold" }
+italic = { family = "Iosevka Nerd Font", style = "Medium Italic" }
+bold_italic = { family = "Iosevka Nerd Font", style = "Bold Italic" }
 
 [colors.primary]
 background = "0x181818"
