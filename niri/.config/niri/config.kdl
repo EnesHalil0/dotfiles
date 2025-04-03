@@ -1,7 +1,19 @@
+spawn-at-startup "pipewire"
 spawn-at-startup "xwayland-satellite"
+spawn-at-startup "wl-paste" "--watch" "cliphist" "store"
+
 environment {
 	DISPLAY ":0"
-	GTK_THEME "Adwaita:dark"
+	GTK_THEME "Adwaita-dark"
+	XCURSOR_THEME "Adwaita"
+}
+
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+
+    hide-when-typing
+    hide-after-inactive-ms 1000
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Overview
@@ -11,7 +23,7 @@ input {
     keyboard {
         xkb {
             layout "us,tr"
-            options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+            options "grp:rctrl_toggle,ctrl:nocaps"
         }
 		repeat-delay 180
 		repeat-rate 70
@@ -75,7 +87,7 @@ output "HDMI-A-1" {
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 12
+    gaps 5
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -285,8 +297,8 @@ window-rule {
 
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
-/-window-rule {
-    geometry-corner-radius 12
+window-rule {
+    geometry-corner-radius 7
     clip-to-geometry true
 }
 
@@ -538,4 +550,9 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+
+	//
+	// Clipboard
+	// 
+	Mod+V { spawn "sh" "-c" "cliphist list | fuzzel -d | cliphist decode | wl-copy"; }
 }

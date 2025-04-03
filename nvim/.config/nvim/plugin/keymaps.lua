@@ -62,9 +62,9 @@ vim.keymap.set("n", "<space>cd", function()
 end)
 
 -- Format
-vim.keymap.set("n", "<space>ff", function()
-	vim.lsp.buf.format()
-end)
+-- vim.keymap.set("n", "<space>ff", function()
+-- 	vim.lsp.buf.format()
+-- end)
 
 -- Function to toggle the quickfix list
 local function toggle_quickfix()
@@ -84,3 +84,10 @@ end
 
 -- Keymap to toggle the quickfix list
 vim.keymap.set("n", "<leader>qf", toggle_quickfix, { desc = "Toggle Quickfix List" })
+
+vim.keymap.set("n", "<space>qq", ":close<CR>", { noremap = true, desc = "Quit Neovim" })
+
+local expr = {silent = true, expr = true, remap = false}
+
+vim.keymap.set('', 'j', "(v:count == 0 ? 'gj' : 'j')", expr)
+vim.keymap.set('', 'k', "(v:count == 0 ? 'gk' : 'k')", expr)

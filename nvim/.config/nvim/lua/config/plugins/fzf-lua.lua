@@ -15,6 +15,8 @@ return {
 		vim.keymap.set("n", "<space>sk", require('fzf-lua').keymaps)
 		vim.keymap.set("n", "<space>sh", require('fzf-lua').helptags)
 		vim.keymap.set("n", "<space>sb", require('fzf-lua').buffers)
+
+		vim.keymap.set("n", "<space>fl", ":FzfLua<CR>")
 	end,
 	opts = {{'telescope'}},
 }

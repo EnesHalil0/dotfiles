@@ -24,7 +24,7 @@ opt.swapfile = false
 -- Don't have `o` add a comment
 opt.formatoptions:remove "o"
 
-opt.wrap = false
+opt.wrap = true
 opt.linebreak = true
 
 opt.cursorline = true

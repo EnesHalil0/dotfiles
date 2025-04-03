@@ -21,13 +21,13 @@ if [ "$percentage" -lt 0 ] || [ "$percentage" -gt 100 ]; then
 fi
 
 # Attempt to set brightness via ddcutil and brightnessctl
-if sudo ddcutil setvcp 10 "$percentage" > /dev/null 2>&1; then
+if ddcutil setvcp 10 "$percentage" > /dev/null 2>&1; then
   echo "Brightness set via ddcutil to $percentage%."
 else
   echo "Warning: Failed to set brightness via ddcutil."
 fi
 
-if sudo brightnessctl s "${percentage}%" > /dev/null 2>&1; then
+if brightnessctl s "${percentage}%" > /dev/null 2>&1; then
   echo "Brightness set via brightnessctl to $percentage%."
 else
   echo "Warning: Failed to set brightness via brightnessctl."

@@ -1,40 +1,41 @@
 window-decoration = none
 gtk-adwaita = false
 
+# theme = "OneHalfDark"
+background = "111111"
+
+font-size = 12
+
 font-family = Iosevka Nerd Font
 font-style = Medium
 font-style-bold = Bold
 font-style-italic = Medium Italic
 font-style-bold-italic = Bold Italic
 
-font-size = 12
-theme = "OneHalfDark"
-# background = "111111"
-
-keybind = alt+h=goto_split:left
-keybind = alt+l=goto_split:right
-keybind = alt+k=goto_split:top
-keybind = alt+j=goto_split:bottom
-
-keybind = ctrl+alt+l=new_split:right
-keybind = ctrl+alt+h=new_split:left
-keybind = ctrl+alt+j=new_split:down
-keybind = ctrl+alt+k=new_split:up
-
-keybind = shift+alt+l=resize_split:right,40
-keybind = shift+alt+h=resize_split:left,40
-keybind = shift+alt+j=resize_split:down,40
-keybind = shift+alt+k=resize_split:up,40
-
 keybind = ctrl+enter=unbind
 
-# keybind = alt+1=unbind
-# keybind = alt+2=unbind
-# keybind = alt+3=unbind
-# keybind = alt+4=unbind
-# keybind = alt+5=unbind
-# keybind = alt+6=unbind
-# keybind = alt+7=unbind
-# keybind = alt+8=unbind
-# keybind = alt+9=unbind
-# keybind = alt+0=unbind
+# keybind = alt+h=goto_split:left
+# keybind = alt+l=goto_split:right
+# keybind = alt+k=goto_split:top
+# keybind = alt+j=goto_split:bottom
+#
+# keybind = ctrl+alt+l=new_split:right
+# keybind = ctrl+alt+h=new_split:left
+# keybind = ctrl+alt+j=new_split:down
+# keybind = ctrl+alt+k=new_split:up
+#
+# keybind = shift+alt+l=resize_split:right,40
+# keybind = shift+alt+h=resize_split:left,40
+# keybind = shift+alt+j=resize_split:down,40
+# keybind = shift+alt+k=resize_split:up,40
+
+keybind = alt+1=unbind
+keybind = alt+2=unbind
+keybind = alt+3=unbind
+keybind = alt+4=unbind
+keybind = alt+5=unbind
+keybind = alt+6=unbind
+keybind = alt+7=unbind
+keybind = alt+8=unbind
+keybind = alt+9=unbind
+keybind = alt+0=unbind

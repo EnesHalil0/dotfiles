@@ -25,15 +25,24 @@ return {
 			--
 			local fzf = require('fzf-lua')
 			local opts = { buffer = bufnr, noremap = true, silent = true }
-			vim.keymap.set("n", "gd", fzf.lsp_definitions, opts)
-			vim.keymap.set("n", "gr", fzf.lsp_references, opts)
-			vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-			vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+			local set = vim.keymap.set
+			set("n", "gd", fzf.lsp_definitions, opts)
+			set("n", "gr", fzf.lsp_references, opts)
+			set("n", "gD", vim.lsp.buf.declaration, opts)
+			set("n", "gT", vim.lsp.buf.type_definition, opts)
+			set("n", "K", vim.lsp.buf.hover, opts)
 
-			vim.keymap.set("n", "<space>rn", vim.lsp.buf.rename, opts)
-			vim.keymap.set("n", "<space>ca", vim.lsp.buf.code_action, opts)
-			vim.keymap.set("n", "<space>wd", fzf.lsp_document_symbols, opts)
+			set("n", "<space>rn", vim.lsp.buf.rename, opts)
+			set("n", "<space>ca", vim.lsp.buf.code_action, opts)
+			set("n", "<space>wd", fzf.lsp_document_symbols, opts)
+
+			--
+			-- Split Keymaps
+			--
+			set("n", "<space>gd" , function ()
+				vim.cmd "vsplit"
+				fzf.lsp_definitions()
+			end, opts)
 		end,
 	},
 	{

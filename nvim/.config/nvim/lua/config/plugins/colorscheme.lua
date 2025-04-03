@@ -4,7 +4,7 @@ return {
 		config = function()
 			require('nightfox').setup({
 				options = {
-					transparent = false, -- Disable setting background
+					transparent = true, -- Disable setting background
 					styles = {
 						comments = "italic" }
 				}
@@ -94,5 +94,5 @@ return {
 
 			-- vim.cmd("colorscheme gruvbox")
 		end
-	}
+	},
 }
